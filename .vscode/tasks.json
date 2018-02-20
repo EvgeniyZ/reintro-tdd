@@ -7,13 +7,16 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/reintro-TDD.csproj"
+                "${workspaceRoot}\\src\\Fractions.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
         },
         {
             "taskName": "test",
+            "args": [
+                "${workspaceRoot}\\tests\\FractionsUnitTests.csproj"
+            ],
             "isTestCommand": true
         }
     ]
