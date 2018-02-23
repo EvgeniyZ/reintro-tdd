@@ -19,7 +19,7 @@ namespace src
             var nominator = a.Nominator * b.Denominator + b.Nominator * a.Denominator;
             var denominator = a.Denominator * b.Denominator;
             var divisor = 2;
-            while (divisor < Math.Sqrt(nominator) && divisor < Math.Sqrt(denominator))
+            while (divisor < denominator)
             {
                 while (nominator % divisor == 0 && denominator % divisor == 0)
                 {
