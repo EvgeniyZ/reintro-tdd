@@ -20,8 +20,14 @@ namespace src
             {
                 return new Fraction(1, a.Denominator / 2);
             }
-            var difference = b.Denominator - a.Denominator;
-            return new Fraction(b.Nominator + difference, b.Denominator);
+            var nominator = a.Nominator * b.Denominator + b.Nominator * a.Denominator;
+            var denominator = a.Denominator * b.Denominator;
+            if (nominator % 2 == 0 && denominator % 2 == 0) 
+            {
+                nominator /= 2;
+                denominator /= 2;
+            }
+            return new Fraction(nominator, denominator);
         }
 
         public override string ToString() 
