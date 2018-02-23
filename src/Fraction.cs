@@ -16,13 +16,9 @@ namespace src
 
         public static Fraction operator +(Fraction a, Fraction b) 
         {
-            if (a.Denominator == b.Denominator) 
-            {
-                return new Fraction(1, a.Denominator / 2);
-            }
             var nominator = a.Nominator * b.Denominator + b.Nominator * a.Denominator;
             var denominator = a.Denominator * b.Denominator;
-            if (nominator % 2 == 0 && denominator % 2 == 0) 
+            while (nominator % 2 == 0 && denominator % 2 == 0) 
             {
                 nominator /= 2;
                 denominator /= 2;
