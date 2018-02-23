@@ -14,19 +14,24 @@ namespace src
             Denominator = denominator;
         }
 
-        public static Fraction operator +(Fraction a, Fraction b) 
+        public static Fraction operator +(Fraction a, Fraction b)
         {
             var nominator = a.Nominator * b.Denominator + b.Nominator * a.Denominator;
             var denominator = a.Denominator * b.Denominator;
-            while (nominator % 2 == 0 && denominator % 2 == 0) 
+            var divisor = 2;
+            while (divisor < Math.Sqrt(nominator) && divisor < Math.Sqrt(denominator))
             {
-                nominator /= 2;
-                denominator /= 2;
+                while (nominator % divisor == 0 && denominator % divisor == 0)
+                {
+                    nominator /= divisor;
+                    denominator /= divisor;
+                }
+                divisor++;
             }
             return new Fraction(nominator, denominator);
         }
 
-        public override string ToString() 
+        public override string ToString()
         {
             return $"{Nominator}/{Denominator}";
         }

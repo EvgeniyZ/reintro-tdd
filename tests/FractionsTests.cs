@@ -24,6 +24,12 @@ namespace FractionsUnitTests
             a = new Fraction(7, 1);
             b = new Fraction(5, 1);
             Assert.Equal(new Fraction(12, 1), a + b);
+            a = new Fraction(7, 1);
+            b = new Fraction(5, 1);
+            Assert.Equal(new Fraction(12, 1), a + b);
+            a = new Fraction(1, 3);
+            b = new Fraction(12, 9);
+            Assert.Equal(new Fraction(5, 3), a + b);
         }
     }
 }
